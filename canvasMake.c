@@ -19,6 +19,7 @@
         return ' ';
     }
 
+    // creates a 2d array (canvas) and fills it with random characters
     char **createCanvas(int width, int height){
         char **canvas = malloc(height * sizeof(char*));
             for (int i = 0; i < height; i++){
@@ -30,17 +31,13 @@
             return canvas;
     }
 
-
-
-
-
-    /*
-    int width = 10;
-    int height = 8;
-
-    char **charGrid = malloc(sizeof(*char) * width); // reserves the "first layer"
-    // charGrid is an array of char pointers
-
-    // expand one pointer to look at 'height' size array or characters
-    charGrid[0] = malloc(sizeof(*char) * height); 
-    */
+    // prints the 2d array 
+    char printCanvas(int width, int height, char **canvas){
+        for (int i = 0; i < height; i++){
+            for (int j = 0; j < width; j++){
+                putchar(canvas[i][j]);
+            }
+            putchar('\n');
+        }
+    }
+ // need to free canvas
