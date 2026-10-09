@@ -3,15 +3,15 @@
 #ifndef CANVAS_MAKE_H
 #define CANVAS_MAKE_H
 
-char static pickChar(char *charList, int size);
+char pickChar(char *charList, int size);
 
-char static genRandomChar(double chance, char chosenChar);
+char genRandomChar(double chance, char chosenChar);
 
-char static **createCanvas(int width, int height);
+char **createCanvas(int width, int height);
 
-void static printCanvas(int width, int height, char **canvas);
+void printCanvas(int width, int height, char **canvas);
 
-void static freeCanvas(char **canvas, int wisth, int height);
+void freeCanvas(char **canvas, int wisth, int height);
 
 
 #endif 
