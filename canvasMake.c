@@ -57,6 +57,7 @@
     // purpose: frees each allocated row array, then frees main row-pointer array
     // return value: void
     void freeCanvas(char **canvas, int width, int height){
+        (void)width;
         for (int i = 0; i < height; i++){
             free(canvas[i]);
         }
