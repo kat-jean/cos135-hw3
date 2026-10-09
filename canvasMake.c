@@ -11,7 +11,7 @@
     // purpose: picks and returns a random character from the provided list
     // parameters: charList = array of valid characters; size = number of elements in charList
     // return value: a single randomly selected character
-    char pickChar(char *charList, int size){
+    static char pickChar(char *charList, int size){
         return charList[rand() % size];
     }
 
@@ -20,7 +20,7 @@
     // chance = double representing the probability of placing a char
     // chosenChar = the char selected
     // purpose: to determine whether to place the chosenChar or a space
-    char genRandomChar(double chance, char chosenChar){
+    static char genRandomChar(double chance, char chosenChar){
         if (((double)rand() / RAND_MAX) < chance){
             return chosenChar;
         }
