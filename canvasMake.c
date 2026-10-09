@@ -28,6 +28,8 @@
     }
 
     // purpose: creates a 2d array (canvas) and fills it with random characters
+    // return value: pointer to a 2d char array (char**)
+    // parameters: width = columns of the canvas ; height = rows of the canvas
     char **createCanvas(int width, int height){
         char chosenChar = pickChar(validChars, charListSize);
         char **canvas = malloc(height * sizeof(char*)); // foundation of createCanvas code taken from sept30.c (done in class)
@@ -40,7 +42,9 @@
             return canvas;
     }
 
-    // prints the 2d array 
+    // purpose: iterates through the 2d canvas array and prints each char
+    // parameters: width = columns of the canvas ; height = rows of the canvas ; canvas = 2d array containing canvas chars
+    // return value: void
     void printCanvas(int width, int height, char **canvas){
         for (int i = 0; i < height; i++){
             for (int j = 0; j < width; j++){
@@ -49,7 +53,9 @@
             putchar('\n');
         }
     }
-    // need to free canvas
+    // parameters: canvas = 2d array to be freed ; width = columns of the canvas ; height = rows of the canvas
+    // purpose: frees each allocated row array, then frees main row-pointer array
+    // return value: void
     void freeCanvas(char **canvas, int width, int height){
         for (int i = 0; i < height; i++){
             free(canvas[i]);
