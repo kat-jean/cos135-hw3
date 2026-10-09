@@ -19,9 +19,13 @@ int main(int argc, char **argv){
         return 1;
     }
 
+    // set the rng
     srand(time(NULL));
 
+    // create, print, and free the canvas
+    char **canvas = createCanvas(width, height);
+    printCanvas(width, height, canvas);
+    freeCanvas(canvas, width, height);
 
-
-
+    return 0;
 }
